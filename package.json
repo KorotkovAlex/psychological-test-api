@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/vais51/psychological-test-api/issues"
   },
+  "keywords": [
+    "heroku"
+  ],
   "homepage": "https://github.com/vais51/psychological-test-api#readme",
   "dependencies": {
     "babel": "^6.23.0",
