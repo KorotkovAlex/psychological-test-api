@@ -3,6 +3,18 @@ import { connection } from '../../db';
 
 const app = express();
 
+app.post('/id', (req, res) => {
+  connection.query(`SELECT questions.id_question, questions.description, answers.title, answers.weight, answers.index_answer, qha.index_question from questions, questions_has_answers as qha, answers where id_test = ${req.body.id_test} and qha.id_question = questions.id_question and qha.id_answer = answers.id_answer ORDER BY questions.id_question, questions.description, qha.index_question, answers.title, answers.weight, answers.index_answer`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+
+    res.json({
+      questions: results
+    });
+  });
+});
+
 app.post('/', (req, res) => {
   connection.query('SELECT * from questions', (error, results) => {
     if (error) {

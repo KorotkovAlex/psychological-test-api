@@ -3,21 +3,14 @@ import { app } from '../../app';
 
 
 describe('request to api', () => {
-  test('returns users', () => {
-    const questions = {
-      questions: [{
-        description: 'Answer oen first question',
-        id_question: 1,
-        id_test: 1,
-        index: 1,
-        title: 'Where you life'
-      }]
-    };
+  test('returns questions by id', () => {
+    const questionsLength = 48;
 
     return request(app)
-      .post('/questions')
+      .post('/questions/id')
+      .send({ id_test: 2 })
       .then(response => {
-        expect(response.body).toEqual(questions);
+        expect(response.body.questions.length).toEqual(questionsLength);
       });
   });
 });

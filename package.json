@@ -27,6 +27,7 @@
     "eslint-plugin-react": "^7.6.1",
     "express": "^4.16.2",
     "mysql": "^2.15.0",
+    "nodemailer": "^4.6.0",
     "pg-promise": "^2.9.5"
   },
   "devDependencies": {
