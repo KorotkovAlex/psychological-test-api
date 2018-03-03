@@ -48,7 +48,7 @@ app.post('/logup', (req, res) => {
     }
   });
 
-  connection.query(`insert into users (mail, password, first_name, last_name, birthday, city, id_sexs) values ('${mail}', '${password}', '${first_name}', '${last_name}', '${birthday}', ${city}, ${id_sex})`, () => {
+  connection.query(`insert into users (mail, password, first_name, last_name, birthday, city, id_sexs) values ('${mail}', '${password}', '${first_name}', '${last_name}', '${birthday}', '${city}', ${id_sex})`, () => {
     res.json({
       message: 'user is logup',
       isLogup: true
