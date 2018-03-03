@@ -21,6 +21,8 @@ app.post('/id', (req, res) => {
       throw error;
     }
 
+    console.log('req.body.mail', req.body);
+
     res.json({
       users: results
     });
