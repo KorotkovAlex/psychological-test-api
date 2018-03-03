@@ -30,7 +30,7 @@ app.post('/id', (req, res) => {
 app.post('/logup', (req, res) => {
   const { mail, password, first_name, last_name, birthday, city, id_sex } = req.body;
 
-  if (!mail || !first_name || !last_name || !birthday || !password) {
+  if (!mail || !first_name || !last_name || !birthday || !password || !city || !id_sex) {
     res.json({
       message: 'Have not all data',
       isLogup: false
