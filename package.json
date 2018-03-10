@@ -8,8 +8,7 @@
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "test": "jest",
     "babel": "babel",
-    "build": "babel src --out-dir dist",
-    "start": "npm run build && node dist/server.js"
+    "start": "babel-node ./src/server.js --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
@@ -41,6 +40,7 @@
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.17.0",
     "jest": "^21.2.1",
     "regenerator-runtime": "^0.11.1",
