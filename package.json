@@ -8,7 +8,7 @@
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "test": "jest",
     "build": "rimraf dist/ && babel ./src --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/server.js"
+    "start": "nodemon src/server.js --exec babel-node"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.17.0",
     "jest": "^21.2.1",
+    "nodemon": "^1.17.1",
     "regenerator-runtime": "^0.11.1",
     "rimraf": "^2.6.2",
     "superagent": "^3.8.2",
