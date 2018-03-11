@@ -23,7 +23,7 @@ app.post('/add', (req, res) => {
       connection.query(`insert into results (id_answer, id_question, mail, id_statistics) values (${item.id_answer}, ${item.id_question}, '${statistic.mail}', ${result.insertId})`)
     ));
 
-    connection.query(`SELECT from_values, to_values, description, title from total_options where id_tests = ${statistic.id_test}`, (error, resTo) => {
+    connection.query(`SELECT from_values, to_values, description, title from total_options where id_tests = ${statistic.id_test} and from_values <= ${statistic.number_point} and to_values >= ${statistic.number_point}`, (error, resTo) => {
       res.json({
         total_options: resTo,
         number_point: statistic.number_point

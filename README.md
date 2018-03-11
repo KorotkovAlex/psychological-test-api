@@ -9,7 +9,7 @@ Request type - post;
 Body: {};
 
 Response:
-~~~
+```sh
 {
   users: [
     {
@@ -24,7 +24,7 @@ Response:
     ...
   ]
 }
-~~~
+```
 ### /id
 Request type - post;
 
