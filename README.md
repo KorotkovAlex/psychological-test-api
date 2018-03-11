@@ -9,7 +9,7 @@ Request type - post;
 Body: {};
 
 Response:
-```sh
+```
 {
   users: [
     {
@@ -145,6 +145,30 @@ Response:
       name: 'Женский'
     }
   ]
+}
+~~~
+
+### /update
+Request type - post;
+
+Description:
+This is request update password, first_name, last_name, city by mail.
+
+Body:
+~~~
+{
+  mail: 'example@.ru',
+  password: '123456',
+  first_name: 'Ivan',
+  last_name: 'Ivanov',
+  city: 'Vladimir'
+}
+~~~
+
+Response:
+~~~
+{
+  users: 'UPDATE'
 }
 ~~~
 
@@ -321,6 +345,37 @@ Response:
       weight: 12,
       index_answer: 1,
       index_question: 12
+    }
+  ]
+}
+~~~
+
+## /totaloptions
+
+Sub url
+
+### /
+Request type - post;
+
+Description:
+This is request return array total options.
+
+Body:
+~~~
+{
+  id_tests: 1
+}
+~~~
+
+Response:
+~~~
+{
+  total_options: [
+    {
+      from_values: 0,
+      to_values: 30,
+      description: 'Description ...',
+      title: 'Title ...',
     }
   ]
 }

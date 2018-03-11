@@ -73,4 +73,18 @@ app.post('/sexs', (req, res) => {
   });
 });
 
+app.post('/update', (req, res) => {
+  const { mail, password, first_name, last_name, city } = req.body;
+
+  connection.query(`update users set password='${password}', first_name='${first_name}', last_name='${last_name}', city='${city}' where mail='${mail}'`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+
+    res.json({
+      users: 'UPDATE'
+    });
+  });
+});
+
 export default app;

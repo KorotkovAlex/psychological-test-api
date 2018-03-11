@@ -3,27 +3,19 @@ import { app } from '../../app';
 
 describe('request to api', () => {
   test('returns users by mail', () => {
-    const users = {
-      users:
-      [
-        {
-          mail: 'programmerweb@yandex.ru',
-          password: '1',
-          birthday: '1997-01-18T21:00:00.000Z',
-          id_sexs: 1,
-          first_name: 'Alex',
-          last_name: 'Korotkov',
-          city: 'Мурманск'
-        }
-      ]
+    const body = {
+      mail: 'dv@.com',
+      password: '1234567',
+      first_name: 'Vladislav',
+      last_name: 'Davidenko',
+      city: 'Vladimir'
     };
 
-    return request(app)
-      .post('/users/id')
-      .send({ mail: 'programmerweb@yandex.ru' })
-      .then(response => {
-        expect(response.body).toEqual(users);
-      });
+    // return request(app)
+    //   .post('/users/update')
+    //   .send(body)
+    //   .then(response => {
+    //     expect(response.body).toEqual('UPDATE');
+    //   });
   });
-
 });
