@@ -363,7 +363,7 @@ This is request return array total options.
 Body:
 ~~~
 {
-  id_tests: 1
+  id_test: 1
 }
 ~~~
 
